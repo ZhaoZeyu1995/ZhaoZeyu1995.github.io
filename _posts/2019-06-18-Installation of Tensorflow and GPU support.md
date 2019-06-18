@@ -28,7 +28,6 @@ conda activate tensorflow
 pip install tensorflow
 ```
 And now, if you only want to use CPU for tensorflow, you have finished.
-
 If you want to use a GPU, just change it to this.
 ```shell
 pip install tensorflow-gpu
