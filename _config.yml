@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-title: "Blog Title"
-author: "Blog Author"
-description: "Really cool blog about ... something"
-=======
 title: "Hongwu's Blog"
 author: "Hongwu"
 description: "Math, Deep Leaning, Automatic Speech Recognition and Keyword Search."
->>>>>>> de7d94860610fa765cc052df74b54d75ec7fab4f
 lang: "en"
 
 # Page settings
@@ -17,15 +11,9 @@ date_format: "%B %d, %Y"     # see http://shopify.github.io/liquid/filters/date/
 # Theme settings
 hide_title: false            # remove site heading in the header
 hide_footer: false           # hide the "previous" and "next" links at the end of each post
-<<<<<<< HEAD
-dark_theme: false            # use the dark mode as default
-dark_header: false           # keep the header dark
-dark_footer: false           # keep the footer dark
-=======
 dark_theme: true            # use the dark mode as default
 dark_header: true           # keep the header dark
 dark_footer: true           # keep the footer dark
->>>>>>> de7d94860610fa765cc052df74b54d75ec7fab4f
 # style: minimal             # use a simpler style inspired by the minima theme
 
 navigation:                  # site navigation in the header
@@ -33,18 +21,6 @@ navigation:                  # site navigation in the header
   - README.md
 #  - title: "https://"       # linking external sites is also supported
 
-<<<<<<< HEAD
-#icons:                      # icons in the header, see http://fontawesome.com/icons
-#  envelope: "mailto:niklasbuschmann@users.noreply.github.com"
-#  github: "https://github.com/niklasbuschmann/contrast"
-#  rss: "/contrast/feed.xml"
-
-comments:                    # embed disqus or isso comments
-#  disqus: ""
-#  isso: ""
-
-plugins: 
-=======
 icons:                      # icons in the header, see http://fontawesome.com/icons
   envelope: "Hongwu:zeyuhongwu1995@gmail.com"
   github: "https://github.com/ZhaoZeyu1995"
@@ -55,7 +31,6 @@ comments:                    # embed disqus or isso comments
 #  isso: ""
 
 plugins:
->>>>>>> de7d94860610fa765cc052df74b54d75ec7fab4f
  - jekyll-feed
  - jekyll-paginate
  - jekyll-default-layout
