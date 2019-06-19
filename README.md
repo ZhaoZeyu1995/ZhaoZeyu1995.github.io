@@ -5,7 +5,7 @@ permalink: "/about/"
 
 ## About Myself
 
-I'm now a postgraduate student in Tsinghua University, Beijing,China and major in keyword search (KWS) and sometimes I'd like to do something about automatic speech recognition.
+I'm now a postgraduate student in Tsinghua University, Beijing, China and major in keyword search (KWS) and sometimes I'd like to do something about automatic speech recognition.
 
 I like mathematics and have a deep interest in the theory of deep learning and the mathematic explanation of it, which perhaps will be my major research field in the future.
 
