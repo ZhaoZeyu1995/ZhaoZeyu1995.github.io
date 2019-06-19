@@ -1,36 +1,31 @@
-title: "Hongwu's Blog"
-author: "Hongwu"
-description: "Something about math, deep leaning, automatic speech recognition and keyword search."
-lang: "en"
+# general configuration
+url: http://excentris.net
+baseurl: ''
 
-# Page settings
-permalink: /:title/          # see https://jekyllrb.com/docs/permalinks/
-date_format: "%B %d, %Y"     # see http://shopify.github.io/liquid/filters/date/
-#paginate: 8                 # use "layout: paginate" in the index.html to enable pagination
+# compass configuration
+compass:
+  # an avatar or logo (optional)
+  logo: "/images/compass.png"
+  # author will appear under the avatar (optional)
+  author: "Compass"
+  # tagline will appear under the title (optional)
+  tagline: "The <a href='http://jekyllrb.com'>Jekyll</a> theme for your personal landing page"
+  # if include_content is true, the contents of the content.html include will be
+  # added right above the generated item list, if present
+  include_content: true
+  # if include_analytics is true, the content of the analytics.html include will
+  # be added at the end of the <head> section. You can add your Google Analytics
+  # Tracking Code to that file.
+  include_analytics: false
+  # Twitter @username (as defined by the Twitter Card specs)
+  twitter: "compass"
 
-# Theme settings
-hide_title: false            # remove site heading in the header
-hide_footer: false           # hide the "previous" and "next" links at the end of each post
-dark_theme: true            # use the dark mode as default
-dark_header: true           # keep the header dark
-dark_footer: ture           # keep the footer dark
-# style: minimal             # use a simpler style inspired by the minima theme
+# exclude
+exclude: ["CNAME", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
 
-navigation:                  # site navigation in the header
-  - index.html
-  - README.md
-#  - title: "https://"       # linking external sites is also supported
+# Dependencies
+markdown: kramdown
+highlighter: rouge
 
-#icons:                      # icons in the header, see http://fontawesome.com/icons
-#  envelope: "mailto:niklasbuschmann@users.noreply.github.com"
-#  github: "https://github.com/niklasbuschmann/contrast"
-#  rss: "/contrast/feed.xml"
-
-comments:                    # embed disqus or isso comments
-#  disqus: ""
-#  isso: ""
-
-plugins:
- - jekyll-feed
- - jekyll-paginate
- - jekyll-default-layout
+# Permalinks
+permalink: pretty
