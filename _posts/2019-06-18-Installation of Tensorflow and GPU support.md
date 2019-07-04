@@ -6,17 +6,17 @@ In this post, you will see how to install tensorflow and GPU support. I assume t
 
 Of course, this post is just a test file for my Github Pages. You can find a lot of articles like this from Google.
 
-Here is some details about my OS and environment.
+Here are some details about my OS and environment.
 * CentOS 7 (BTW, here I only talk about linux system.)
-* anaconda3 Anaconda is a goog tool to manage your enviroment. You can get more information in its [offcial website](https://www.anaconda.com/)
+* anaconda3 Anaconda is a good tool to manage your enviroment. You can get more information in its [offcial website](https://www.anaconda.com/)
 * nvidia-driver 410.79 Dependence for [CUDA](https://developer.nvidia.com/cuda-toolkit) and [CuDNN](https://developer.nvidia.com/cudnn)
 
 ## Create a new enviroment
-* I suppose that you have already had anaconda3 installed. Then, you can run the command below to create an enviroment, where the name of it is tensorflow and version of python we use is 3.7.
+* I suppose that you have already had anaconda3 installed. Then, you can run the command below to create an enviroment, named tensorflow, and we use python3.7.
 ```shell
 conda create --name tensorflow python=3.7
 ```
-After that you have created a new enviroment. Then you can activate it and do something.
+After that you have created a new enviroment. Then you can activate it and do anything you want.
 
 ## Install Tensorflow
 1. First, activate the enviroment created before by runing this command in your terminal.
@@ -28,13 +28,13 @@ conda activate tensorflow
 pip install tensorflow
 ```
 And now, if you only want to use CPU for tensorflow, you have finished.
-If you want to use a GPU, just change it to this.
+If you want to use a GPU, just use this command below.
 ```shell
 pip install tensorflow-gpu
 ```
 
 ## GPU support
-There is something a little troublesome that you need CUDA and CuDNN to make GPU support for your tensorflow-gpu.
+To support tensorflow-gpu, you would have to install CUDA and CuDNN, which will be a little annoying.
 
 ### Install CUDA
 Make sure that the versions of Tensorflow and CUDA are compatible, otherwise you will have much trouble. To check if the version of CUDA you have is campatible with your Tensorflow, go to the offical website of [Tensorflow](https://www.tensorflow.org/) for more information.
