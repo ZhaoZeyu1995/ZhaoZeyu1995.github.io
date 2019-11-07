@@ -41,16 +41,16 @@ import tensorflow as tf
 from tensorflow import keras
 layer = keras.layers.Dense(10)
 isinstance(layer, keras.layers.Layer)
-# >>> True
+# True
 ```
 ### Model
 在Keras API之下，所有的Model都是`tf.keras.models.Model`或者`tf.keras.Model`的子类。我们可以尝试定义一个Model。
 ```python
 model = keras.Sequential()
 isinstance(model, tf.keras.models.Model)
-# >>> True
+# True
 isinstance(model, tf.keras.Model)
-# >>> True 
+# True 
 ```
 **注：Sequential API下面将要介绍，这里仅仅是一个示例**
 - - - -
@@ -65,13 +65,13 @@ from tensorflow.keras.datasets import mnist
 # Data
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 x_train.shape
-# >>> (60000, 28, 28)
+# (60000, 28, 28)
 y_train.shape
-# >>> (60000,)
+# (60000,)
 x_test.shape
-# >>> (10000, 28, 28)
+# (10000, 28, 28)
 y_test.shape
-# >>> (10000,)
+# (10000,)
 
 # Model
 model = keras.Sequential()
