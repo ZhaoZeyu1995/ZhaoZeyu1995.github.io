@@ -61,7 +61,6 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.datasets import mnist
-
 # Data
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 x_train.shape
@@ -72,13 +71,12 @@ x_test.shape
 # (10000, 28, 28)
 y_test.shape
 # (10000,)
-
 # Model
 model = keras.Sequential()
 model.add(layers.Dense(32, activation=‘relu’, input_shape=(784,)))
 model.add(layers.Dense(10, activation=’softmax’))
 model.summary()
-‘’’
+'''
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
 =================================================================
@@ -90,14 +88,13 @@ Total params: 25,450
 Trainable params: 25,450
 Non-trainable params: 0
 _________________________________________________________________
-‘’’
+'''
 model.compile(optimizer=‘Adam’, loss=‘sparse_categorical_crossentropy’, metrics=[‘acc’])
-
 # Train
 x_train = x_train.reshape((60000, 784))
 x_test = x_test.reshape((10000, 784))
 model.fit(x_train, y_train, batch_size=32, validation_split=0.1, epochs=5)
-‘’’
+'''
 Train on 54000 samples, validate on 6000 samples
 Epoch 1/5
 54000/54000 [==============================] - 2s 30us/sample - loss: 0.2926 - acc: 0.9258 - val_loss: 0.2537 - val_acc: 0.9370
@@ -109,13 +106,13 @@ Epoch 4/5
 54000/54000 [==============================] - 2s 30us/sample - loss: 0.2598 - acc: 0.9340 - val_loss: 0.2526 - val_acc: 0.9430
 Epoch 5/5
 54000/54000 [==============================] - 2s 30us/sample - loss: 0.2570 - acc: 0.9334 - val_loss: 0.2770 - val_acc: 0.9367
-‘’’
+'''
 # Evaluation
 model.evaluate(x_test, y_test)
-‘’’
+'''
 10000/10000 [==============================] - 0s 13us/sample - loss: 0.3257 - acc: 0.9280
 [0.32569682545661927, 0.928]
-‘’’
+'''
 ```
 以上便是使用Keras的一个最基本的示例。可以分几个基本的步骤
 1.  数据准备——事实上，在我的日产工作中这部分的代码占了绝大部分的时间……
@@ -132,10 +129,8 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras import Model
 from tensorflow.keras.datasets import mnist
-
 # Data
 # Omit
-
 # Functional API
 inputs = keras.Input((28, 28))
 x = layers.Flatten()(inputs)
@@ -143,15 +138,11 @@ x = layers.Dense(32, activation=‘relu’)(x)
 x = layers.Dense(10, activation=‘softmax’)(x)
 model = Model(inputs, x)
 model.summary()
-
 # Model Compiling
 model.compile(optimizer=‘Adam’, loss=‘sparse_categorical_crossentropy’, metrics=[‘acc’])
-
 # Model Fitting
 model.fit(x_train, y_train, …)
-
 # Model Evaluation 
-
 model.evaluate(x_test, y_test)
 ```
 我们可以看到，由于Functional API的引入，我们可以实现两个Sequential API所不能实现的功能。
@@ -168,10 +159,8 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras import Model
 from tensorflow.keras.datasets import mnist
-
 # Data
 # Omit 
-
 # Model
 inputs = keras.Input((28, 28))
 x = layers.Conv2D(32, 3, activation=‘relu’)(inputs)
@@ -183,11 +172,8 @@ x = layers.Dense(64, activation=‘relu’)(x)
 x = layers.Dense(10, activation=‘softmax’)(x)
 model = Model(inputs, x)
 model.summary()
-
 model.compile(optimizer=‘adma’, loss=‘sparse_categorical_crossentropy’, metrics=[‘acc’])
-
 model.fit(x_train, y_train, validation_split=0.1, epochs=5, batch_size=32)
-
 model.evaluate(x_test, y_test)
 ```
 ### RNN
@@ -195,7 +181,6 @@ model.evaluate(x_test, y_test)
 ```python
 from tensorflow.keras.datasets import imdb
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-
 # Data
 (x_train, y_train), (x_test, y_test) = imdv.load_data(num_words=10000)
 x_train = pad_sequences(x_train)
