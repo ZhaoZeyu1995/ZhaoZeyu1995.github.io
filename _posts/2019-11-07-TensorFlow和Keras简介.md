@@ -170,8 +170,8 @@ from tensorflow.keras.datasets import mnist
 # Functional API
 inputs = keras.Input((28, 28))
 x = layers.Flatten()(inputs)
-x = layers.Dense(32, activation=‘relu’)(x)
-x = layers.Dense(10, activation=‘softmax’)(x)
+x = layers.Dense(32, activation='relu')(x)
+x = layers.Dense(10, activation='softmax')(x)
 model = Model(inputs, x)
 model.summary()
 # Model Compiling
