@@ -104,8 +104,8 @@ x_test.shape # (10000, 28, 28)
 y_test.shape # (10000,)
 # Model
 model = keras.Sequential()
-model.add(layers.Dense(32, activation=‘relu’, input_shape=(784,)))
-model.add(layers.Dense(10, activation=’softmax’))
+model.add(layers.Dense(32, activation='relu', input_shape=(784,)))
+model.add(layers.Dense(10, activation='softmax'))
 model.summary()
 '''
 _________________________________________________________________
@@ -176,7 +176,7 @@ x = layers.Dense(10, activation=‘softmax’)(x)
 model = Model(inputs, x)
 model.summary()
 # Model Compiling
-model.compile(optimizer=‘Adam’, loss=‘sparse_categorical_crossentropy’, metrics=[‘acc’])
+model.compile(optimizer='Adam', loss='sparse_categorical_crossentropy', metrics=['acc'])
 # Model Fitting
 model.fit(x_train, y_train, …)
 # Model Evaluation 
@@ -218,7 +218,7 @@ x = layers.Dense(64, activation=‘relu’)(x)
 x = layers.Dense(10, activation=‘softmax’)(x)
 model = Model(inputs, x)
 model.summary()
-model.compile(optimizer=‘adma’, loss=‘sparse_categorical_crossentropy’, metrics=[‘acc’])
+model.compile(optimizer='Adam', loss='sparse_categorical_crossentropy', metrics=['acc'])
 model.fit(x_train, y_train, validation_split=0.1, epochs=5, batch_size=32)
 model.evaluate(x_test, y_test)
 ```
@@ -242,7 +242,7 @@ x = layers.Dense(1, activation=‘sigmoid’)(x)
 model = Model(inputs, x)
 model.summary()
 
-model.compile(optimizer=‘rmsprop’, loss=‘binary_crossentropy’, metrics=[‘acc’])
+model.compile(optimizer='rmsprop', loss='binary_crossentropy', metrics=['acc'])
 
 model.fit(x_train, y_train, batch_size=32, validation_split=0.1, epochs=5)
 
@@ -256,17 +256,17 @@ model.evaluate(x_test, y_test)
 ### 保存模型
 
 ```python
-model.save(‘path/to/save/’) # .hdf5 file the whole model
-model.save_weights(‘path/to/save’) # .hdf5 file only the weights 
+model.save('path/to/save/') # .hdf5 file the whole model
+model.save_weights('path/to/save') # .hdf5 file only the weights 
 ```
 ### 模型加载
 ```python
 from tensorflow.keras.models import load_model
-model = load_model(‘path/to/save’)
+model = load_model('path/to/save')
 
 # Or from weights
 model = create_model(…)
-model.load_weights(‘path/to/save’)
+model.load_weights('path/to/save')
 ```
 
 ****
@@ -313,7 +313,7 @@ class MyDenseLayer(tf.keras.layers.Layer):
     self.num_outputs = num_outputs
 
   def build(self, input_shape):
-    self.kernel = self.add_variable(“kernel”,
+    self.kernel = self.add_variable('kernel',
                                     shape=[int(input_shape[-1]),
                                            self.num_outputs])
 
@@ -333,13 +333,13 @@ model.summary()
 ```python
 class ResnetIdentityBlock(tf.keras.Model):
   def __init__(self, inputs_shape, kernel_size, filters):
-    super(ResnetIdentityBlock, self).__init__(name=‘’)
+    super(ResnetIdentityBlock, self).__init__(name='')
     filters1, filters2, filters3 = filters
 
     self.conv2a = tf.keras.layers.Conv2D(filters1, (1, 1))
     self.bn2a = tf.keras.layers.BatchNormalization()
 
-    self.conv2b = tf.keras.layers.Conv2D(filters2, kernel_size, padding=‘same’)
+    self.conv2b = tf.keras.layers.Conv2D(filters2, kernel_size, padding='same')
     self.bn2b = tf.keras.layers.BatchNormalization()
 
     self.conv2c = tf.keras.layers.Conv2D(filters3, (1, 1))
