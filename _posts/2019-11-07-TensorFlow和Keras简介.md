@@ -208,13 +208,13 @@ from tensorflow.keras.datasets import mnist
 # Omit 
 # Model
 inputs = keras.Input((28, 28))
-x = layers.Conv2D(32, 3, activation=‘relu’)(inputs)
+x = layers.Conv2D(32, 3, activation='relu')(inputs)
 x = layers.MaxPooling2D(2)(x)
-x = layers.Conv2D(64, 3, activation=‘relu’)(x)
+x = layers.Conv2D(64, 3, activation='relu')(x)
 x = layers.MaxPooling2D(2)(x)
 x = layers.Flatten()(x)
-x = layers.Dense(64, activation=‘relu’)(x)
-x = layers.Dense(10, activation=‘softmax’)(x)
+x = layers.Dense(64, activation='relu')(x)
+x = layers.Dense(10, activation='softmax')(x)
 model = Model(inputs, x)
 model.summary()
 model.compile(optimizer='Adam', loss='sparse_categorical_crossentropy', metrics=['acc'])
@@ -237,7 +237,7 @@ x_test = pad_sequences(x_test)
 # Model
 inputs = keras.Input((None,))
 x = layers.LSTM(32)(inputs)
-x = layers.Dense(1, activation=‘sigmoid’)(x)
+x = layers.Dense(1, activation='sigmoid')(x)
 model = Model(inputs, x)
 model.summary()
 
