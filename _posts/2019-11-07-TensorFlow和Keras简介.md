@@ -38,9 +38,13 @@ date:       2019-11-07
 详细信息可以查看TensorFlow的官方网站
 
 ```shell
-pip install tensorflow # CPU version
+# CPU version
+pip install tensorflow 
+
 # Or
-pip install tensorflow-gpu # GPU version
+
+# GPU version
+pip install tensorflow-gpu 
 ```
 
 ****
@@ -71,6 +75,7 @@ isinstance(layer, keras.layers.Layer)
 model = keras.Sequential()
 isinstance(model, tf.keras.models.Model)
 # True
+
 isinstance(model, tf.keras.Model)
 # True 
 ```
@@ -88,6 +93,7 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.datasets import mnist
+
 # Data
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
@@ -101,6 +107,7 @@ x_test.shape # (10000, 28, 28)
 
 
 y_test.shape # (10000,)
+
 # Model
 model = keras.Sequential()
 model.add(layers.Dense(32, activation='relu', input_shape=(784,)))
@@ -120,6 +127,7 @@ Non-trainable params: 0
 _________________________________________________________________
 '''
 model.compile(optimizer='Adam', loss='sparse_categorical_crossentropy', metrics=['acc'])
+
 # Train
 x_train = x_train.reshape((60000, 784))
 x_test = x_test.reshape((10000, 784))
@@ -137,6 +145,7 @@ Epoch 4/5
 Epoch 5/5
 54000/54000 [==============================] - 2s 30us/sample - loss: 0.2570 - acc: 0.9334 - val_loss: 0.2770 - val_acc: 0.9367
 '''
+
 # Evaluation
 model.evaluate(x_test, y_test)
 '''
@@ -149,7 +158,7 @@ model.evaluate(x_test, y_test)
 
 1.  数据准备——事实上，在我的日产工作中这部分的代码占了绝大部分的时间……
 2. 定义模型——以上示例使用了Sequential API，实际上，在之后将会看到Functional API只是在定义模型的过程上与其不同
-3. 编译模型—— `model.compile(optimizer=…, loss=…)` 是最为核心和简单的一步，这一步中定义了loss以及optimizer
+3. 编译模型—— `model.compile(optimizer=…, loss=...)` 是最为核心和简单的一步，这一步中定义了loss以及optimizer
 4. 训练模型—— `model.fit(x_train, y_train, validation_split=0.1, batch_size=32, epochs=5)`
 5. 测试模型—— `model.evaluate(x_teset, y_test)` 
 
@@ -165,8 +174,10 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras import Model
 from tensorflow.keras.datasets import mnist
+
 # Data
 # Omit
+
 # Functional API
 inputs = keras.Input((28, 28))
 x = layers.Flatten()(inputs)
@@ -174,10 +185,13 @@ x = layers.Dense(32, activation='relu')(x)
 x = layers.Dense(10, activation='softmax')(x)
 model = Model(inputs, x)
 model.summary()
+
 # Model Compiling
 model.compile(optimizer='Adam', loss='sparse_categorical_crossentropy', metrics=['acc'])
+
 # Model Fitting
-model.fit(x_train, y_train, …)
+model.fit(x_train, y_train, ...)
+
 # Model Evaluation 
 model.evaluate(x_test, y_test)
 ```
@@ -204,8 +218,10 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras import Model
 from tensorflow.keras.datasets import mnist
+
 # Data
 # Omit 
+
 # Model
 inputs = keras.Input((28, 28))
 x = layers.Conv2D(32, 3, activation='relu')(inputs)
@@ -256,6 +272,7 @@ model.evaluate(x_test, y_test)
 
 ```python
 model.save('path/to/save/') # .hdf5 file the whole model
+
 model.save_weights('path/to/save') # .hdf5 file only the weights 
 ```
 ### 模型加载
@@ -264,7 +281,7 @@ from tensorflow.keras.models import load_model
 model = load_model('path/to/save')
 
 # Or from weights
-model = create_model(…)
+model = create_model(...)
 model.load_weights('path/to/save')
 ```
 
