@@ -245,17 +245,19 @@ model.evaluate(x_test, y_test)
 ```python
 from tensorflow.keras.datasets import imdb
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+
 # Data
-(x_train, y_train), (x_test, y_test) = imdv.load_data(num_words=10000)
+(x_train, y_train), (x_test, y_test) = imdb.load_data(num_words=10000)
 x_train = pad_sequences(x_train)
 x_test = pad_sequences(x_test)
 
 # Model
 inputs = keras.Input((None,))
-x = layers.LSTM(32)(inputs)
+x = layers.Embedding(10000, 64)(inputs)
+x = layers.LSTM(32)(x)
 x = layers.Dense(1, activation='sigmoid')(x)
 model = Model(inputs, x)
-model.summary()
+# model.summary()
 
 model.compile(optimizer='rmsprop', loss='binary_crossentropy', metrics=['acc'])
 
