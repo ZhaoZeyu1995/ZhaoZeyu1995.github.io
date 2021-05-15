@@ -1,7 +1,3 @@
-title:	CTC Prefix Beam Search Decoding Algorithm with Language Model
-
-data: 2021-5-15
-
 # CTC Prefix Beam Search Decoding Algorithm with Language Model
 
 This short article introduces the basis of CTC Prefix Beam Search Decoding Algorithm, which was a little bit difficult for me in the past. I found a very useful [article on Medium](https://medium.com/corti-ai/ctc-networks-and-language-models-prefix-beam-search-explained-c11d1ee23306), and here is the [github repo](https://github.com/corticph/prefix-beam-search) for it. 
